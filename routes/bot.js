@@ -6,7 +6,7 @@ import sortRandomly from '../helpers/sortRandomly.js'
 export default async function (fastify) {
   fastify.post(
     '/bot',
-    { onRequest: [fastify.zoom.verifyRequest] },
+    { preValidation: [fastify.zoom.verifyRequest] },
     async (req, res) => {
       try {
         const {
